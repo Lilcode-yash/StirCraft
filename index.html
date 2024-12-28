@@ -200,6 +200,13 @@
         #we {
             font-size: 30px;
         }
+        .image-hover:hover img {
+      transform: scale(1.1); /* Scale up the image */
+    }
+
+    .image-hover img {
+      transition: transform 0.3s ease-in-out; /* Smooth transition effect */
+    }
     </style>
 </head>
 
@@ -217,10 +224,10 @@
 
             <!-- Navigation Menu -->
             <div class="flex space-x-4 items-center">
-                <a href="#" class="hover:text-yellow-500 font-bold px-4 py-2 rounded-md">Shop</a>
-                <a href="#" class="hover:text-yellow-500 px-4 py-2 rounded-md">Y-Us?</a>
-                <a href="#" class="hover:text-yellow-500 px-4 py-2 rounded-md">Offers</a>
-                <a href="#" class="hover:text-yellow-500 px-4 py-2 rounded-md">About</a>
+                <a href="#shop" class="hover:text-yellow-500 font-bold px-4 py-2 rounded-md">Shop</a>
+                <a href="#me" class="hover:text-yellow-500 px-4 py-2 rounded-md">Y-Us?</a>
+                <a href="#offer" class="hover:text-yellow-500 px-4 py-2 rounded-md">Offers</a>
+                <a href="inner.html" class="hover:text-yellow-500 px-4 py-2 rounded-md">Secrets</a>
                 <a href="aaaaa.html" class="hover:text-yellow-500 px-4 py-2 rounded-md">Login</a>
 
                 <!-- Dropdown Menu for Men -->
@@ -252,8 +259,77 @@
                 </div>
             </div>
         </div>
+        <!-- Header Section -->
+  <header class="bg-black text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">🎉 Exclusive Offers</h1>
+    </div>
+  </header>
+
+  <!-- Offer Banner -->
+  <section class="bg-yellow-300 text-gray-800 py-6">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-bold">New Year Offer! 🔥</h2>
+      <p class="text-xl mt-2">Don't miss out on our exclusive deals. Shop now and save big!</p>
+    </div>
+  </section>
+  <div>
+    <marquee behavior="scroll" direction="left" scrollamount="5" class="bg-yellow-600">
+        <span >Get Free Delivery on First Order.</span> 
+    </marquee>
+  </div>
+
+  <!-- Offer Cards Section -->
+  <section class="offer container mx-auto py-8" id="offer">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- Offer 1 -->
+      <div class="bg-white rounded-lg shadow-lg p-4">
+        <div class="image-hover overflow-hidden rounded-lg">
+          <img src="public/images/mocktail2.png" alt="Offer 1" class="rounded-lg w-full">
+        </div>
+        <div class="p-4">
+          <h3 class="text-lg font-bold">Free Best Seller </h3>
+          <p class="text-sm mt-2 text-gray-600">On order above ₹1000!</p>
+        </div>
+      </div>
+
+      <!-- Offer 2 -->
+      <div class="bg-white rounded-lg shadow-lg p-4">
+        <div class="image-hover overflow-hidden rounded-lg">
+          <img src="public/images/FIZZY.png" alt="Offer 2" class="rounded-lg w-full">
+        </div>
+        <div class="p-4">
+          <h3 class="text-lg font-bold">Free Shiping</h3>
+          <p class="text-sm mt-2 text-gray-600">On first order</p>
+          
+        </div>
+      </div>
+
+      <!-- Offer 3 -->
+      <div class="bg-white rounded-lg shadow-lg p-4">
+        <div class="image-hover overflow-hidden rounded-lg">
+          <img src="public/images/glow tax 2.png" alt="Offer 3" class="rounded-lg w-full">
+        </div>
+        <div class="p-4">
+          <h3 class="text-lg font-bold">Free GlowTox</h3>
+          <p class="text-sm mt-2 text-gray-600">On every mocktail pack, For limited time !</p>
+        </div>
+      </div>
+
+      
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="bg-gray-800 text-white py-4">
+    <div class="container mx-auto text-center">
+      <p>© 2025 StirCraft. All rights reserved.</p>
+    </div>
+  </footer>
+
         <!--product -->
-        <div class="text-4xl font-extrabold ml-24  mt-[-40px] mb-4  ">
+        <div class="me text-4xl font-extrabold ml-24  mt-[-40px] mb-4  " id="me">
             <button
                 class="px-6 py-3 bg-black text-white font-medium text-sm rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 hover:bg-yellow-400 animate-bounce w-72">
                 Why choose Stircraft
@@ -347,7 +423,7 @@
     </div>
 
 
-    <div style="border-bottom: 3px solid orange;">
+    <div class="shop" style="border-bottom: 3px solid orange;" id="shop">
         <div
             style="color: rgb(235, 177, 52); font-size: 50px; font-weight: bolder; margin-left: 100px; margin-top: 100px; ">
             STIR<span style="color: rgb(84, 36, 3);">CRAFT</span></div>
