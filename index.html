@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StirCraft</title>
+    <link rel="shortcut icon" href="public/images/Designer (4).png" type="image/x-icon">
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/css">
+        /* Custom styling to avoid increasing header height */
+    .logo-container img {
+      height: 20px; /* Larger logo size */
+    }
+
+    /* Keyframes for sliding the images horizontally */
+    @keyframes slide {
+      0%, 25% { transform: translateX(0%); }
+      50%, 75% { transform: translateX(-50%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* Apply animation to the carousel inner */
+    .carousel-inner {
+      animation: slide 6s ease-in-out infinite;
+      display: flex;
+      width: 200%; /* Adjust width to fit 3 images side by side */
+    }
+
+    .carousel-inner img {
+      width: 900px; /* Ensure images fill the container width */
+      height: auto;
+      flex-shrink: 0; /* Prevent images from shrinking */
+      object-fit: cover; /* Ensures the image fills the container and keeps aspect ratio */
+    }
+
+    /* Adjust the container size */
+    .carousel-container {
+      max-width: 900px; /* Set a larger max-width for the frame */
+      width: 100vw; /* Make it responsive */
+      height: 600px; /* Set the desired height for the frame */
+      overflow: hidden;
+    }
+    .image-hover:hover img {
+      transform: scale(1.1); /* Scale up the image */
+    }
+
+    .image-hover img {
+      transition: transform 0.3s ease-in-out; /* Smooth transition effect */
+    }
+
+        .y {
+            margin-left: 20px;
+        }
+
+        .x {
+
+            overflow: auto;
+            width: 300px;
+            height: 200px;
+        }
+
+        .to1 {
+            background-color: rgb(243, 220, 91);
+            width: 110px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 15px;
+            border: 1px solid white;
+            border-radius: 20px;
+            color: black;
+            margin-left: 10px;
+            margin-top: 30px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .to1:hover,
+        .to1:focus {
+            transform: scale(1.1);
+            /* Scale up */
+            background-color: #e2e2e2;
+            /* Optional color change */
+        }
+
+        .to1:hover {
+            background-color: black;
+            color: white;
+            box-shadow: 0 0 20px rgba(253, 253, 253, 0.964), 0 0 30px rgba(253, 253, 253, 0.964);
+        }
+
+        .to2 {
+            background-color: rgb(151, 53, 248);
+            width: 110px;
+            font-size: 15px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border: 1px solid white;
+            border-radius: 20px;
+            color: white;
+            margin-left: 10px;
+            margin-top: 30px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .to2:hover,
+        .to2:focus {
+            transform: scale(1.1);
+            /* Scale up */
+            background-color: #e2e2e2;
+            /* Optional color change */
+        }
+
+        .to2:hover {
+            background-color: black;
+            color: white;
+            box-shadow: 0 0 20px rgba(253, 253, 253, 0.964), 0 0 30px rgba(253, 253, 253, 0.964);
+        }
+
+        .image-container {
+            display: inline-block;
+        }
+
+        .blink-image {
+            width: 300px;
+            /* Adjust as needed */
+            height: auto;
+            transition: opacity 0.1s ease-in-out;
+        }
+
+        .blink-image:hover {
+            animation: blink-animation 1s infinite;
+        }
+
+        @keyframes blink-animation {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .naruto {
+            background-color: white;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .naruto:hover,
+        .naruto:focus {
+            transform: scale(1.1);
+            /* Scale up */
+            background-color: #e2e2e2;
+            /* Optional color change */
+        }
+
+        .naruto:focus-visible {
+            outline: 2px solid #ffffff;
+            /* Accessible focus outline */
+        }
+        #we{
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(239, 236, 236);">
+    <!-- Navigation Bar -->
+    <nav class="bg-black text-white p-4 flex h-28">
+      <div class="container mx-auto flex justify-between items-center">
+        <!-- Logo Section -->
+        <div class="logo-container flex items-center">
+          <img src="public/images/Designer (4).png" alt="Logo" class="block" style="height: 300px; margin-bottom:14px;"> <!-- Larger logo size -->
+          <span class="ml-4 text-2xl font-bold"></span> <!-- Optional brand name -->
+        </div>
+       
+  
+        <!-- Navigation Menu -->
+        <div class="flex space-x-4 items-center">
+          <a href="#" class="hover:text-yellow-500 font-bold px-4 py-2 rounded-md">Shop</a>
+          <a href="#" class="hover:text-yellow-500 px-4 py-2 rounded-md">Y-Us?</a>
+          <a href="#" class="hover:text-yellow-500 px-4 py-2 rounded-md">Offers</a>
+          <a href="#" class="hover:text-yellow-500 px-4 py-2 rounded-md">About</a>
+          <a href="aaaaa.html" class="hover:text-yellow-500 px-4 py-2 rounded-md">Login</a>
+  
+          <!-- Dropdown Menu for Men -->
+          
+        </div>
+        
+        
+      </div>
+      
+    </nav>
+    <div> <marquee behavior="scroll" direction="left" scrollamount="5" class="bg-yellow-400">
+        <span class="bi-">⏰ Let's begin our 2025 with Healthy Snacks ⏰</span> ⏰ Let's begin our 2025 with Healthy Snacks ⏰
+      </marquee></div>
+    
+
+     <!-- Marquee -->
+ 
+<section class="bg-yellow-50" , >
+  <!-- Carousel/Slideshow -->
+  <div class="flex items-center justify-center min-h-screen">
+    <div class="carousel-container">
+      <div class="carousel-inner">
+        <img src="public/images/templste1.jpg" alt="" style="height: 500px; ">
+        <img src="public/images/template2.jpg" alt="" style="height: 500px; ">
+        <img src="public/images/template3.jpg" alt="" style="height: 500px;  ">
+      </div>
+    </div>
+  </div>
+  <!--product -->
+  <div  class="text-4xl font-extrabold ml-24  mt-[-40px] mb-4  ">
+    <button class="px-6 py-3 bg-black text-white font-medium text-sm rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 hover:bg-yellow-400 animate-bounce w-72">
+      Why choose Stircraft
+    </button>
+
+</div>
+<div style="margin: auto; width:80%; margin-bottom: 10px;">
+  <div class="bg-[#fae4b2]  text-purple-500" style="
+    padding: 10px;">
+    <pre>
+    Why Choose StirCraft?
+
+    When it comes to mocktails, StirCraft stands out. Here's why:
+    
+    Innovative and Unique: Our mocktail powders offer a fresh take on beverages—a concept never done before. 
+    StirCraft delivers a perfect fusion of creativity and functionality, setting a new standard in the drink industry.
+    
+    Healthier Choices: Our products are made with natural ingredients, low or no added sugar, 
+    and zero artificial additives. Indulge in a flavorful treat without compromising your health goals.
+    
+    Affordable Indulgence: Enjoy premium quality at a reasonable price. 
+    StirCraft ensures that you can savor world-class flavors without breaking the bank.
+    
+    Eco-Friendly: With compact, travel-friendly sachets and minimal packaging, 
+    we're committed to reducing waste and lowering our environmental footprint.
+    
+    Customizable Flavors: Love your drink extra tangy or lightly sweet? With StirCraft, 
+    you're in control. Adjust the taste to match your preferences.
+    
+    On-the-Go Convenience: No bulky bottles or refrigeration needed. 
+    Our lightweight powders fit effortlessly into your busy lifestyle, 
+    whether you're at home, traveling, or celebrating with friends.
+
+
+    Exceptional Taste: From tropical delights to classic favorites, 
+    our mocktails are crafted to tantalize your taste buds with every sip.
+    
+    StirCraft isn't just another drink option—it's a smarter, healthier, 
+    and more exciting way to enjoy life's best moments. 
+    Choose StirCraft, and let's craft something extraordinary together.
+    </pre>
+  </div>
+</div>
+
+
+</section>
+
+    <div class="nav btn btn-warning" style="display: flex;">
+        <div>
+            <details>
+                <summary class="y btn btn-dark" style="font-size: 20px;">Millets-Based</summary>
+                <div class="x btn btn-warning">
+                    <li>LMAO-Bajra</li>
+                    <li>LMAO-Jawar</li>
+                    <li>LMAO-Millet</li>
+                    <li>LMAO-Millets-Rose</li>
+                    <li>LMAO-Ragi</li>
+                </div>
+
+            </details>
+        </div>
+        <div>
+            <details>
+                <summary class="y btn btn-dark" style="font-size: 20px;">pARTy</summary>
+                <div class="x">
+                    <li>VibeJuice</li>
+                    <li>DateX</li>
+                    <li>Magic</li>
+                    <li>GlowTox</li>
+                    <li>Sparkle</li>
+                    <li>Bliss</li>
+                    <li>Spark</li>
+
+                </div>
+
+            </details>
+        </div>
+        <div>
+            <details>
+                <summary class="y btn btn-dark" style="font-size: 20px;">Top Selling</summary>
+                <div class="x">
+                    <li>GloTox</li>
+                    <li>Sparkle</li>
+                    <li>LMAO-Ragi</li>
+                    <li>LMAO-Jawar</li>
+                    
+                </div>
+
+            </details>
+        </div>
+    </div>
+
+
+    <div style="border-bottom: 3px solid orange;">
+        <div
+            style="color: rgb(235, 177, 52); font-size: 50px; font-weight: bolder; margin-left: 100px; margin-top: 100px; ">
+            STIR<span style="color: rgb(84, 36, 3);">CRAFT</span></div>
+    </div>
+
+
+    <div class="d-flex justify-content-evenly">
+
+
+
+        <div class="naruto" data-name="Temple of peace Oversized" data-price="1299"
+            style="color: black; margin-top: 40px; border: 1px solid white; border-radius: 20px; width: 450px; height: 450px; padding-left: 25px; padding-top: 25px;">
+            <div class="image-container">
+                <img src="public/images/vRAGI 2.png" alt="Blinking Image" class="blink-image"
+                    style="width: 400px; height: 250px; border-radius: 40%;">
+            </div>
+            <div style="margin-top: 10px;">LMAO-Ragi</div>
+            <div style="font-weight: bold;">₹299-<span style="color: green;">₹200 off</span></div>
+            <div><button class="to1 add-to-cart"><a href="/snaxx/addtocart.html">Add to Cart</a></button><button
+                    class="to2 buy-now">Buy Now</button></div>
+        </div>
+
+
+        <div class="naruto" data-name="Temple of peace Oversized" data-price="1299"
+            style="color: black; margin-top: 40px; border: 1px solid white; border-radius: 20px; width: 450px; height: 450px; padding-left: 25px; padding-top: 25px;">
+            <div class="image-container">
+                <img src="public/images/spark 2.png" alt="Blinking Image" class="blink-image"
+                    style="width: 400px; height: 250px; border-radius: 40%;">
+            </div>
+            <div style="margin-top: 10px;">Spark</div>
+            <div style="font-weight: bold;">₹199-<span style="color: green;">₹200 off</span></div>
+            <div><button class="to1 add-to-cart"><a href="/snaxx/addtocart.html">Add to Cart</a></button><button
+                    class="to2 buy-now">Buy Now</button></div>
+        </div>
+
+    </div>
+    <!-- <div class="cart" style="background-color: white;"> -->
+    <!-- <h3>Your Cart</h3> -->
+    <!-- <i class="bi bi-cart-fill"></i> -->
+    <!-- <ul class="cart-items"> -->
+    <!-- Cart items will be added here -->
+    <!-- </ul> -->
+    <!-- <div class="total">Total: ₹0</div> -->
+    <!-- </div> -->
+
+    <div class="d-flex justify-content-evenly">
+
+
+
+        <div class="naruto"
+            style="color: black; margin-top: 40px; border: 1px solid white; border-radius: 20px; width: 450px; height: 450px; padding-left: 25px; padding-top: 25px;">
+            <div class="image-container">
+                <img src="public/images/MILLET ROSE 2.png" alt="Blinking Image" class="blink-image"
+                    style="width: 400px; height: 250px; border-radius: 40%;">
+            </div>
+            <div style="margin-top: 10px;">LMAO-Millets-Rose</div>
+            <div style="font-weight: bold;">₹299-<span style="color: green;">₹200 off</span></div>
+            <div><button class="to1 add-to-cart"><a href="/snaxx/addtocart.html">Add to Cart</a></button><button
+                    class="to2 buy-now">Buy Now</button></div>
+        </div>
+
+
+        <div class="naruto"
+            style="color: black; margin-top: 40px; border: 1px solid white; border-radius: 20px; width: 450px; height: 450px; padding-left: 25px; padding-top: 25px;">
+            <div class="image-container">
+                <img src="public/images/sparkle 2.png" alt="Blinking Image" class="blink-image"
+                    style="width: 400px; height: 250px; border-radius: 40%;">
+            </div>
+            <div style="margin-top: 10px;">Sparkle</div>
+            <div style="font-weight: bold;">₹99-<span style="color: green;">₹200 off</span></div>
+            <div><button class="to1 add-to-cart"><a href="/snaxx/addtocart.html">Add to Cart</a></button><button
+                    class="to2 buy-now">Buy Now</button></div>
+        </div>
+
+    </div>
+    <!-- <div class="cart" style="background-color: white;"> 
+        <h3>Your Cart</h3>
+        <ul class="cart-items">
+            <!- Cart items will be added here -->
+    <!-- </ul> -->
+    <!-- <div class="total">Total: ₹0</div> -->
+    <!-- </div> -->
+
+
+
+    <div style="border-bottom: 3px solid orange; margin-top: 200px;">
+        <div
+            style="color: rgb(235, 177, 52); font-size: 50px; font-weight: bolder; margin-left: 100px; margin-top: 100px;">
+            STIR<span style="color: rgb(84, 36, 3);">CRAFT</span></div>
+    </div>
+
+
+    <div class="d-flex justify-content-evenly">
+
+
+        <div class="naruto"
+            style="color: black; margin-top: 40px; border: 1px solid white; border-radius: 20px; width: 450px; height: 450px; padding-left: 25px; padding-top: 25px;">
+            <div class="image-container">
+                <img src="public/images/jawar 2.png" alt="Blinking Image" class="blink-image"
+                    style="width: 400px; height: 250px; border-radius: 40%;">
+            </div>
+            <div style="margin-top: 10px;">LMA0-Jawar</div>
+            <div style="font-weight: bold;">₹299-<span style="color: green;">₹200 off</span></div>
+            <div><button class="to1"><a href="/snaxx/addtocart.html">Add to Cart</a></button><button class="to2">Buy
+                    Now</button></div>
+        </div>
+
+        <div class="naruto"
+            style="color: black; margin-top: 40px; border: 1px solid white; border-radius: 20px; width: 450px; height: 450px; padding-left: 25px; padding-top: 25px;">
+            <div class="image-container">
+                <img src="public/images/BAJRA 2.png" alt="Blinking Image" class="blink-image"
+                    style="width: 400px; height: 250px; border-radius: 40%;">
+            </div>
+            <div style="margin-top: 10px;">LMA0-Bajra</div>
+            <div style="font-weight: bold;">₹299-<span style="color: green;">₹200 off</span></div>
+            <div><button class="to1"><a href="/snaxx/addtocart.html">Add to Cart</a></button><button class="to2">Buy
+                    Now</button></div>
+        </div>
+
+
+    </div>
+
+    <div class="d-flex justify-content-evenly">
+
+
+        <div class="naruto"
+            style="color: black; margin-top: 40px; border: 1px solid white; border-radius: 20px; width: 450px; height: 450px; padding-left: 25px; padding-top: 25px;">
+            <div class="image-container">
+                <img src="public/images/bliss 2.png" alt="Blinking Image" class="blink-image"
+                    style="width: 400px; height: 250px; border-radius: 40%;">
+            </div>
+            <div style="margin-top: 10px;">Bliss</div>
+            <div style="font-weight: bold;">₹199-<span style="color: green;">₹200 off</span></div>
+
+            <div><button class="to1"><a href="/snaxx/addtocart.html">Add to Cart</a></button><button class="to2">Buy
+                    Now</button></div>
+        </div>
+
+        <div class="naruto"
+            style="color: black; margin-top: 40px; border: 1px solid white; border-radius: 20px; width: 450px; height: 450px; padding-left: 25px; padding-top: 25px;">
+            <div class="image-container">
+                <img src="public/images/Bubbly vibes 2.png" alt="Blinking Image" class="blink-image"
+                    style="width: 400px; height: 250px; border-radius: 40%;">
+            </div>
+            <div>
+                <div style="margin-top: 10px;">Bubbly Vibes</div>
+                <div style="font-weight: bold;">₹199-<span style="color: green;">₹200 off</span></div>
+                <div><button class="to1"><a href="/snaxx/addtocart.html">Add to Cart</a></button><button class="to2">Buy
+                        Now</button></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-evenly">
+
+
+        <div class="naruto"
+            style="color: black; margin-top: 40px; border: 1px solid white; border-radius: 20px; width: 450px; height: 450px; padding-left: 25px; padding-top: 25px;">
+            <div class="image-container">
+                <img src="public/images/vibe juice 2.png" alt="Blinking Image" class="blink-image"
+                    style="width: 400px; height: 250px; border-radius: 40%;">
+            </div>
+            <div style="margin-top: 10px;">Vibe Juice</div>
+            <div style="font-weight: bold;">₹199-<span style="color: green;">₹200 off</span></div>
+
+            <div><button class="to1"><a href="/snaxx/addtocart.html">Add to Cart</a></button><button class="to2">Buy
+                    Now</button></div>
+        </div>
+
+        <div class="naruto"
+            style="color: black; margin-top: 40px; border: 1px solid white; border-radius: 20px; width: 450px; height: 450px; padding-left: 25px; padding-top: 25px;">
+            <div class="image-container">
+                <img src="public/images/lively 2.png" alt="Blinking Image" class="blink-image"
+                    style="width: 400px; height: 250px; border-radius: 40%;">
+            </div>
+            <div>
+                <div style="margin-top: 10px;">Lively</div>
+                <div style="font-weight: bold;">₹199-<span style="color: green;">₹200 off</span></div>
+                <div><button class="to1"><a href="/snaxx/addtocart.html">Add to Cart</a></button><button class="to2">Buy
+                        Now</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <button class="hover-bp">Secrets</button>
+    </div>
+
+    <footer>
+        <div style="border-bottom: 1px solid black; background-color:whitesmoke; color: black; width: 1300px; margin-left: 100px;">
+            <div class="d-flex justify-content-evenly" style="margin-top: 100px;">
+                <div>
+                    <div class="footer" id="we">
+                        <h1>SUPPORT</h1>
+                    </div>
+                    <div>Contact Us</div>
+                    <div>FAQs</div>
+                    <div>Size Guide</div>
+                </div>
+
+                <div>
+                    <div class="footer" id="we">
+                        <h1>We Are For</h1>
+                    </div>
+                    <div>Health Drinks</div>
+                    <div>Affordable</div>
+                    <div>Availability</div>
+                    <div>Sustainability</div>
+                    <div>Happiness</div>
+                    <div>Energy</div>
+                </div>
+
+                <div>
+                    <div class="footer" id="we">
+                        <h1>Company</h1>
+                    </div>
+                    <div>Small business insights</div>
+                    <div>Small business guides</div>
+                    <div>Small business templates</div>
+                    <div>Invoice template</div>
+                    <div>Payslip template</div>
+                    <div>Receipt template</div>
+                    <div>Accounting glossary</div>
+                    <div>Business resources</div>
+                    <div>Customer stories</div>
+                </div>
+            </div>
+
+
+            <div class="d-flex justify-content-evenly" style="margin-top: 100px;">
+                <div>
+                    <div class="footer" id="we">
+                        <h1>Popular features</h1>
+                    </div>
+                    <div>health</div>
+                    <div>Accept payments</div>
+                    <div>Energy</div>
+                    <div>Payroll</div>
+                    <div>Manage drinks</div>
+                    <div>See all features</div>
+                </div>
+
+               
+
+                <div>
+                    <div class="footer" id="we">
+                        <h1>Company</h1>
+                    </div>
+                    <div>our story</div>
+                    <div>career's Term &</div>
+                    <div>Governance and leadership</div>
+                    <div>Condition's Privacy &</div>
+                    <div>Product updates</div>
+                    <br><br>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-evenly" style="margin-top: 30px;">
+            <div>© 2024 Xero Limited. All rights reserved. "Xero" and "Beautiful <br>business" are trademarks of Xero
+                Limited.</div>
+            <div><img src="public/images/India.png" alt="" style="width: 30px; height: 20px;"><span
+                    style="color: rgb(0, 72, 255); margin-right: 200px; margin-left: 10px;">Region</span></div>
+        </div>
+
+        <div class="d-flex justify-content-evenly" style="margin-top: 30px;" >
+            <div class="d-flex justify-content-evenly" >
+                <div style="margin-left: 20px;">Legal</div>
+                <div style="margin-left: 20px;">Privacy notice</div>
+                <div style="margin-left: 20px;">Sitemap</div>
+                <div style="margin-left: 20px;">Accessibility</div>
+            </div>
+
+            <div class="d-flex justify-content-evenly" style="margin-right: 200px;">
+                <div class="bi bi-facebook" style="margin-left: 20px;"></div>
+                <div class="bi bi-youtube" style="margin-left: 20px;"></div>
+                <div class="bi bi-linkedin" style="margin-left: 20px;"></div>
+                <div class="bi bi-instagram" style="margin-left: 20px;"></div>
+                <div class="bi bi-twitter" style="margin-left: 20px;"></div>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <script>
+        // JavaScript to toggle dropdown visibility
+        document.querySelectorAll('.relative').forEach((menu) => {
+          const button = menu.querySelector('button');
+          const dropdownMenu = menu.querySelector('.dropdown-menu');
+    
+          button.addEventListener('click', () => {
+            // Toggle the dropdown visibility
+            dropdownMenu.classList.toggle('hidden');
+          });
+        });
+      </script>
+
+</body>
+</html>
