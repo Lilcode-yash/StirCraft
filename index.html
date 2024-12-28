@@ -6,50 +6,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StirCraft</title>
     <link rel="shortcut icon" href="public/images/Designer (4).png" type="image/x-icon">
-    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <!-- <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css"> -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.tailwindcss.com"></script>
+
     <style type="text/css">
         /* Custom styling to avoid increasing header height */
-    .logo-container img {
-      height: 20px; /* Larger logo size */
-    }
+        .logo-container img {
+            height: 20px;
+            /* Larger logo size */
+        }
 
-    /* Keyframes for sliding the images horizontally */
-    @keyframes slide {
-      0%, 25% { transform: translateX(0%); }
-      50%, 75% { transform: translateX(-50%); }
-      100% { transform: translateX(-100%); }
-    }
+        /* Keyframes for sliding the images horizontally */
+        @keyframes slide {
 
-    /* Apply animation to the carousel inner */
-    .carousel-inner {
-      animation: slide 6s ease-in-out infinite;
-      display: flex;
-      width: 200%; /* Adjust width to fit 3 images side by side */
-    }
+            0%,
+            25% {
+                transform: translateX(0%);
+            }
 
-    .carousel-inner img {
-      width: 900px; /* Ensure images fill the container width */
-      height: auto;
-      flex-shrink: 0; /* Prevent images from shrinking */
-      object-fit: cover; /* Ensures the image fills the container and keeps aspect ratio */
-    }
+            50%,
+            75% {
+                transform: translateX(-50%);
+            }
 
-    /* Adjust the container size */
-    .carousel-container {
-      max-width: 900px; /* Set a larger max-width for the frame */
-      width: 100vw; /* Make it responsive */
-      height: 600px; /* Set the desired height for the frame */
-      overflow: hidden;
-    }
-    .image-hover:hover img {
-      transform: scale(1.1); /* Scale up the image */
-    }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
 
-    .image-hover img {
-      transition: transform 0.3s ease-in-out; /* Smooth transition effect */
-    }
+        /* Apply animation to the carousel inner */
+        .carousel-inner {
+            animation: slide 6s ease-in-out infinite;
+            display: flex;
+            width: 200%;
+            /* Adjust width to fit 3 images side by side */
+        }
+
+        .carousel-inner img {
+            width: 900px;
+            /* Ensure images fill the container width */
+            height: auto;
+            flex-shrink: 0;
+            /* Prevent images from shrinking */
+            object-fit: cover;
+            /* Ensures the image fills the container and keeps aspect ratio */
+        }
+
+        /* Adjust the container size */
+        .carousel-container {
+            max-width: 900px;
+            /* Set a larger max-width for the frame */
+            width: 100vw;
+            /* Make it responsive */
+            height: 600px;
+            /* Set the desired height for the frame */
+            overflow: hidden;
+        }
+
+        .image-hover:hover img {
+            transform: scale(1.1);
+            /* Scale up the image */
+        }
+
+        .image-hover img {
+            transition: transform 0.3s ease-in-out;
+            /* Smooth transition effect */
+        }
 
         .y {
             margin-left: 20px;
@@ -170,7 +196,8 @@
             outline: 2px solid #ffffff;
             /* Accessible focus outline */
         }
-        #we{
+
+        #we {
             font-size: 30px;
         }
     </style>
@@ -179,59 +206,64 @@
 <body style="background-color: rgb(239, 236, 236);">
     <!-- Navigation Bar -->
     <nav class="bg-black text-white p-4 flex h-28">
-      <div class="container mx-auto flex justify-between items-center">
-        <!-- Logo Section -->
-        <div class="logo-container flex items-center">
-          <img src="public/images/Designer (4).png" alt="Logo" class="block" style="height: 300px; margin-bottom:14px;"> <!-- Larger logo size -->
-          <span class="ml-4 text-2xl font-bold"></span> <!-- Optional brand name -->
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo Section -->
+            <div class="logo-container flex items-center">
+                <img src="public/images/Designer (4).png" alt="Logo" class="block"
+                    style="height: 300px; margin-bottom:14px;"> <!-- Larger logo size -->
+                <span class="ml-4 text-2xl font-bold"></span> <!-- Optional brand name -->
+            </div>
+
+
+            <!-- Navigation Menu -->
+            <div class="flex space-x-4 items-center">
+                <a href="#" class="hover:text-yellow-500 font-bold px-4 py-2 rounded-md">Shop</a>
+                <a href="#" class="hover:text-yellow-500 px-4 py-2 rounded-md">Y-Us?</a>
+                <a href="#" class="hover:text-yellow-500 px-4 py-2 rounded-md">Offers</a>
+                <a href="#" class="hover:text-yellow-500 px-4 py-2 rounded-md">About</a>
+                <a href="aaaaa.html" class="hover:text-yellow-500 px-4 py-2 rounded-md">Login</a>
+
+                <!-- Dropdown Menu for Men -->
+
+            </div>
+
+
         </div>
-       
-  
-        <!-- Navigation Menu -->
-        <div class="flex space-x-4 items-center">
-          <a href="#" class="hover:text-yellow-500 font-bold px-4 py-2 rounded-md">Shop</a>
-          <a href="#" class="hover:text-yellow-500 px-4 py-2 rounded-md">Y-Us?</a>
-          <a href="#" class="hover:text-yellow-500 px-4 py-2 rounded-md">Offers</a>
-          <a href="#" class="hover:text-yellow-500 px-4 py-2 rounded-md">About</a>
-          <a href="aaaaa.html" class="hover:text-yellow-500 px-4 py-2 rounded-md">Login</a>
-  
-          <!-- Dropdown Menu for Men -->
-          
-        </div>
-        
-        
-      </div>
-      
+
     </nav>
-    <div> <marquee behavior="scroll" direction="left" scrollamount="5" class="bg-yellow-400">
-        <span class="bi-">⏰ Let's begin our 2025 with Healthy Snacks ⏰</span> ⏰ Let's begin our 2025 with Healthy Snacks ⏰
-      </marquee></div>
-    
-
-     <!-- Marquee -->
- 
-<section class="bg-yellow-50" , >
-  <!-- Carousel/Slideshow -->
-  <div class="flex items-center justify-center min-h-screen">
-    <div class="carousel-container">
-      <div class="carousel-inner">
-        <img src="public/images/templste1.jpg" alt="" style="height: 500px; ">
-        <img src="public/images/template2.jpg" alt="" style="height: 500px; ">
-        <img src="public/images/template3.jpg" alt="" style="height: 500px;  ">
-      </div>
+    <div>
+        <marquee behavior="scroll" direction="left" scrollamount="5" class="bg-yellow-400">
+            <span class="bi-">⏰ Let's begin our 2025 with Healthy Snacks ⏰</span> ⏰ Let's begin our 2025 with Healthy
+            Snacks ⏰
+        </marquee>
     </div>
-  </div>
-  <!--product -->
-  <div  class="text-4xl font-extrabold ml-24  mt-[-40px] mb-4  ">
-    <button class="px-6 py-3 bg-black text-white font-medium text-sm rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 hover:bg-yellow-400 animate-bounce w-72">
-      Why choose Stircraft
-    </button>
 
-</div>
-<div style="margin: auto; width:80%; margin-bottom: 10px;">
-  <div class="bg-[#fae4b2]  text-purple-500" style="
+
+    <!-- Marquee -->
+
+    <section class="bg-yellow-50" ,>
+        <!-- Carousel/Slideshow -->
+        <div class="flex items-center justify-center min-h-screen">
+            <div class="carousel-container">
+                <div class="carousel-inner">
+                    <img src="public/images/templste1.jpg" alt="" style="height: 500px; ">
+                    <img src="public/images/template2.jpg" alt="" style="height: 500px; ">
+                    <img src="public/images/template3.jpg" alt="" style="height: 500px; ">
+                </div>
+            </div>
+        </div>
+        <!--product -->
+        <div class="text-4xl font-extrabold ml-24  mt-[-40px] mb-4  ">
+            <button
+                class="px-6 py-3 bg-black text-white font-medium text-sm rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 hover:bg-yellow-400 animate-bounce w-72">
+                Why choose Stircraft
+            </button>
+
+        </div>
+        <div style="margin: auto; width:80%; margin-bottom: 10px;">
+            <div class="bg-[#fae4b2]  text-purple-500" style="
     padding: 10px;">
-    <pre>
+                <pre>
     Why Choose StirCraft?
 
     When it comes to mocktails, StirCraft stands out. Here's why:
@@ -263,11 +295,11 @@
     and more exciting way to enjoy life's best moments. 
     Choose StirCraft, and let's craft something extraordinary together.
     </pre>
-  </div>
-</div>
+            </div>
+        </div>
 
 
-</section>
+    </section>
 
     <div class="nav btn btn-warning" style="display: flex;">
         <div>
@@ -307,7 +339,7 @@
                     <li>Sparkle</li>
                     <li>LMAO-Ragi</li>
                     <li>LMAO-Jawar</li>
-                    
+
                 </div>
 
             </details>
@@ -504,7 +536,8 @@
     </div>
 
     <footer>
-        <div style="border-bottom: 1px solid black; background-color:whitesmoke; color: black; width: 1300px; margin-left: 100px;">
+        <div
+            style="border-bottom: 1px solid black; background-color:whitesmoke; color: black; width: 1300px; margin-left: 100px;">
             <div class="d-flex justify-content-evenly" style="margin-top: 100px;">
                 <div>
                     <div class="footer" id="we">
@@ -557,7 +590,7 @@
                     <div>See all features</div>
                 </div>
 
-               
+
 
                 <div>
                     <div class="footer" id="we">
@@ -581,8 +614,8 @@
                     style="color: rgb(0, 72, 255); margin-right: 200px; margin-left: 10px;">Region</span></div>
         </div>
 
-        <div class="d-flex justify-content-evenly" style="margin-top: 30px;" >
-            <div class="d-flex justify-content-evenly" >
+        <div class="d-flex justify-content-evenly" style="margin-top: 30px;">
+            <div class="d-flex justify-content-evenly">
                 <div style="margin-left: 20px;">Legal</div>
                 <div style="margin-left: 20px;">Privacy notice</div>
                 <div style="margin-left: 20px;">Sitemap</div>
@@ -604,15 +637,20 @@
     <script>
         // JavaScript to toggle dropdown visibility
         document.querySelectorAll('.relative').forEach((menu) => {
-          const button = menu.querySelector('button');
-          const dropdownMenu = menu.querySelector('.dropdown-menu');
-    
-          button.addEventListener('click', () => {
-            // Toggle the dropdown visibility
-            dropdownMenu.classList.toggle('hidden');
-          });
-        });
-      </script>
+            const button = menu.querySelector('button');
+            const dropdownMenu = menu.querySelector('.dropdown-menu');
+
+            button.addEventListener('click', () => {
+                // Toggle the dropdown visibility
+                dropdownMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 
 </body>
+
 </html>
